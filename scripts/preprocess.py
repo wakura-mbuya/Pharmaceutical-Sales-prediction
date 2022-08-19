@@ -77,10 +77,10 @@ class Preprocess:
             
     def tranform_StateHoliday(self, df):
         '''tranform the StateHoliday column. StateHoliday column has values 0 and "0". 
-        We need to rows with "0" to 0.
+        We need to rows with 0 to "0"
         '''
         new_df = df.copy(deep=True)
-        new_df['StateHoliday'].loc[new_df['StateHoliday'] == '0'] = 0
+        new_df['StateHoliday'].loc[new_df['StateHoliday'] == 0] = '0'
         return new_df
         
 
